@@ -60,7 +60,7 @@ Webアプリの基礎を説明したうえで、今日のプロジェクトが�
     - https://github.com/javajok/simple-api-client-sample/blob/master/src/main/java/javajok/sample/TweetController.java#L58
       - http://localhost:8090/timeline にGETでアクセス、タイムラインを取得
       - TimelineはTweetのリスト
-      - デバッグで止めて、timelineに何が入ってるか見せるといいのかもしれない
+      - timelineをログで出力してみせる
     - https://github.com/javajok/simple-api-client-sample/blob/master/src/main/java/javajok/sample/TweetController.java#L69
       - 取得したtimelineをhtmlで使えるようにするための処理。詳しくはあとで。
     - https://github.com/javajok/simple-api-client-sample/blob/master/src/main/java/javajok/sample/TweetController.java#L76
