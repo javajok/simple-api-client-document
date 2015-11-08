@@ -1,5 +1,17 @@
 # 2015/11/15 Java女子部 説明資料
 
+## はじめに
+- 今日のプロジェクトの構成
+  - こういう感じの図を用意する
+    - https://cacoo.com/diagrams/Ybvv5TuxOAGIHMsB
+- フレームワークについて
+  - 一般的に、フレームワークとは何をさすのか
+  - Javaのフレームワークの種類
+    - 今日使ったのはSpringBootだけど、他にもいろいろあるよ
+- simple-api-sampleが何をしているか簡単に説明
+  - TwitterAPIつかうの手間なので用意しました
+  - ここでは、つぶやいた情報をデータベースに保存、それを取得することができる。程度の説明で。
+
 ## Webアプリケーションについて (20分)
 Webアプリケーションの基礎知識について説明
 
@@ -35,21 +47,16 @@ Webアプリケーションの基礎知識について説明
     - レスポンス
   - HTTPプロトコル
     - サーバー・クライアント間の通信の取り決め。
+    - URL(URI)
     - GET、POST、(PUT、DELETE)
     - ステータスコード
 
 ## ワークショップで作ってもらったプロジェクト説明 (20分)
 Webアプリの基礎を説明したうえで、今日のプロジェクトがどうなっているか
+- HelloWorld!+ 名前表示
+  - テンプレートエンジンについて説明
 
-- 今日のプロジェクトの構成
-  - こういう感じの図を用意する
-    - https://cacoo.com/diagrams/Ybvv5TuxOAGIHMsB
-- フレームワークについて
-  - 一般的に、フレームワークとは何をさすのか
-  - Javaのフレームワークの種類
-    - 今日使ったのはSpringBootだけど、他にもいろいろあるよ
-- simple-api-sampleが何をしているか簡単に説明
-  - ここでは、つぶやいた情報をデータベースに保存、それを取得することができる。程度の説明で。
+
 - REST APIについて
   - curlでAPIを叩いてみせる？
   - TwitterのAPI仕様書を開いてみせてもよさそう
@@ -65,7 +72,6 @@ Webアプリの基礎を説明したうえで、今日のプロジェクトが�
       - 取得したtimelineをhtmlで使えるようにするための処理。詳しくはあとで。
     - https://github.com/javajok/simple-api-client-sample/blob/master/src/main/java/javajok/sample/TweetController.java#L76
       - templates/sample/timeline.html を呼び出す
-    - テンプレートエンジンについて説明
     - https://github.com/javajok/simple-api-client-sample/blob/master/src/main/resources/templates/sample/timeline.html#L37
       - さっき、Controllerで ``` model.addAttribute(timeline); ``` って書いたから使えてる
     - Controllerから受け取った値を埋め込んだ結果のHTMLを生成、クライアントに返している
@@ -73,42 +79,34 @@ Webアプリの基礎を説明したうえで、今日のプロジェクトが�
   - https://github.com/javajok/simple-api-client-sample/blob/master/src/main/resources/templates/sample/timeline.html#L24
     -  ``` method="post" ```だからPOST実行される
   - あとはGET同様、処理の流れを説明
+  
+  - リダイレクトについて
 
 ## Javaについて (20分)
 処理の流れをわかってもらったところで、もう少しコア(Java)な部分を説明
 
 - Javaとは
-  - 歴史をさらっと
-    - Sun Microsystems社が開発
-    - 最新バージョンは8
-  - オブジェクト指向言語である
-    - オブジェクト指向自体の説明はしない
   - 参考URL：http://docs.oracle.com/javase/jp/8/docs/index.html
     - 簡略化した図を作る？
 - 今日のアプリでサーバーを起動した際に何が起きているか
-  - ```./gradlew bootRun```
-    - Gradleというビルドツールを利用して起動
-    - ビルドツールとは
   - コンパイル
     - 一般で言うコンパイルとは、ソースコードをコンピュータが実行できる機械語のプログラムに変換すること
     - Javaの場合、JVMが実行できるバイトコードのクラス・ファイルに変換される
     - Javaのコンパイラはjavac
       - javacコマンドでコンパイルできる
-      - 今回はGradleがrunコマンド叩いたときに裏で実行してくれている
+      - IDEのrunボタン叩いたときに裏で実行してくれている
     - コンパイルするにはJDKが必要
       - JDK
         - Java SE Development Kit  の略
         - Java用開発者向けキット
           - アプリケーションを開発するのに必要または便利なコンパイラやデバッガなどの開発ツール (http://docs.oracle.com/javase/jp/8/docs/technotes/guides/index.html#jre-jdk)
-          - JREも含んでいる
         - 一般的に、こういう開発者向けキットを「SDK (Software Development Kit)」という
   - JVM
     - Java仮想マシン
     - Javaで開発されたアプリケーションはこの仮想マシン上で実行される
     - 各OS版のJVMが存在する。OS差異はJVMにより吸収されるため、同じプログラムで各OS上で実行することができる。
+
+    - (こっからは口頭)
     - 今回、runすると内蔵のTomcatが起動して、その上でコンパイルされたプログラムが動く
       - 今日はローカルで動かしてもらっている
       - これを公開したいなら、どっかのサーバーにデプロイすればいい
-
-## (おまけ) データベースについて
-  時間があればsimple-api-sampleを元に説明してもいいかも
