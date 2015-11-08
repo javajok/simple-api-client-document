@@ -12,7 +12,7 @@
   - TwitterAPIつかうの手間なので用意しました
   - ここでは、つぶやいた情報をデータベースに保存、それを取得することができる。程度の説明で。
 
-## Webアプリケーションについて (20分)
+## Webアプリケーションについて (目安：20分)
 Webアプリケーションの基礎知識について説明
 
 - サーバー/クライアントモデル
@@ -51,38 +51,19 @@ Webアプリケーションの基礎知識について説明
     - GET、POST、(PUT、DELETE)
     - ステータスコード
 
-## ワークショップで作ってもらったプロジェクト説明 (20分)
+## ワークショップで作ってもらったプロジェクト補足説明
 Webアプリの基礎を説明したうえで、今日のプロジェクトがどうなっているか
-- HelloWorld!+ 名前表示
+- HelloWorld! + 名前表示
   - テンプレートエンジンについて説明
 
 
 - REST APIについて
   - curlでAPIを叩いてみせる？
   - TwitterのAPI仕様書を開いてみせてもよさそう
-- タイムライン取得をしたときに何がおきているか(GET)
-  - ブラウザでhttp://localhost:8080/sample にアクセス
-    - メソッドはGET
-  - https://github.com/javajok/simple-api-client-sample/blob/master/src/main/java/javajok/sample/TweetController.java#L46 が実行される
-    - https://github.com/javajok/simple-api-client-sample/blob/master/src/main/java/javajok/sample/TweetController.java#L58
-      - http://localhost:8090/timeline にGETでアクセス、タイムラインを取得
-      - TimelineはTweetのリスト
-      - timelineをログで出力してみせる
-    - https://github.com/javajok/simple-api-client-sample/blob/master/src/main/java/javajok/sample/TweetController.java#L69
-      - 取得したtimelineをhtmlで使えるようにするための処理。詳しくはあとで。
-    - https://github.com/javajok/simple-api-client-sample/blob/master/src/main/java/javajok/sample/TweetController.java#L76
-      - templates/sample/timeline.html を呼び出す
-    - https://github.com/javajok/simple-api-client-sample/blob/master/src/main/resources/templates/sample/timeline.html#L37
-      - さっき、Controllerで ``` model.addAttribute(timeline); ``` って書いたから使えてる
-    - Controllerから受け取った値を埋め込んだ結果のHTMLを生成、クライアントに返している
-- tweetしたときに何がおきているか(POST)
-  - https://github.com/javajok/simple-api-client-sample/blob/master/src/main/resources/templates/sample/timeline.html#L24
-    -  ``` method="post" ```だからPOST実行される
-  - あとはGET同様、処理の流れを説明
-  
-  - リダイレクトについて
 
-## Javaについて (20分)
+- リダイレクトについて
+
+## Javaについて (目安：20分)
 処理の流れをわかってもらったところで、もう少しコア(Java)な部分を説明
 
 - Javaとは
